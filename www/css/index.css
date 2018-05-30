@@ -1,0 +1,19 @@
+
+body{
+  background-color: #2C3137;
+  color: #2C3137;
+  font-family: 'Press Start 2P', cursive;
+
+  height: 70vh;
+  width: 98vw;
+
+}
+
+a{
+  display: block;
+  text-align: center;
+  margin-top: 14vh;
+  text-align: center;
+  font-size: 7.2vw;
+  color: #C2A957;
+}

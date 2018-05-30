@@ -1,0 +1,67 @@
+
+div#chat{
+  font-size: 2.75vw;
+
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#messagesContainer{
+
+  height: 100%;
+  width: 100%;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: left;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.message{
+  padding: 1.5vw;
+  border-radius: 5px;
+  margin-right: 1vw;
+}
+.message.mine{
+  align-self: flex-end;
+  background-color: #383b40;
+}
+.message.notMine{
+  align-self: left;
+  background-color: #303438;
+}
+span.messenger.pseudo{
+  color: #5d5751;
+  margin-bottom: 2vw;
+  margin-left: 1vw;
+}
+
+input#message{
+  width: 90vw;
+
+  color: #7f756b;
+  background: #383b40;
+  border: none;
+  border-radius: 5px;
+  padding: 1.5vw;
+  margin: 1.5vw;
+
+  font-family: 'Press Start 2P', monospace;
+  font-size: 2.75vw;
+}
+
+
+
+
+
+div#settings{
+  display: none;
+}

@@ -1,0 +1,45 @@
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+
+#logs{
+  font-size: 3vw;
+
+  position: absolute;
+  background-color: black;
+  color: green;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50vh;
+  opacity: 0.5;
+
+  overflow-y: scroll;
+  white-space: pre-wrap;
+
+  padding-top: 2vh;
+}
+
+#toggleLogs{
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 2vw);
+}
+
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+a:visited{
+  color: inherit;
+}

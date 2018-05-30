@@ -1,0 +1,80 @@
+body{
+  background-color: #2C3137;
+  color: #7f756b;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 5vw;
+
+  -webkit-user-select: none; /* Chrome, Opera, Safari */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+
+  height: 70vh;
+  width: 98vw;
+}
+h1{
+  text-align: center;
+  font-size: 7.2vw;
+  color: #C2A957;
+}
+
+#tabs{
+  display: flex;
+}
+#tabs h2{
+  text-align: center;
+  font-size: 1em;
+  flex: 1;
+}
+#tabs #units{
+    border-bottom: 5px solid #7f756b;
+}
+
+
+
+  /** ** PLAYERS INFOS ** **/
+
+.player{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2vh;
+}
+.player:hover{
+  background-color: #363c44;
+}
+
+.player .infos{
+  width: 100%;
+  display: flex;
+}
+.infos img{
+  height: 15vw;
+  width: 15vw;
+  margin-right: 10px;
+}
+.infos .container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.infos .container strong{
+  text-align: left;
+  font-size: 3.5vw;
+  flex: 0.5;
+}
+.healthContainer{
+  width: 90%;
+  flex: 1;
+}
+.healthContainer .health{
+  width: 100%;
+  background-color: #31363c;
+
+}
+.health .bar{
+  height: 100%;
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 3vw;
+}

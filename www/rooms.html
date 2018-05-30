@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" href="css/roomList.css">
+		<link rel="stylesheet" type="text/css" href="css/master.css" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+		<meta name="msapplication-tap-highlight" content="no" />
+		<title>FreeFreeCiv Companion</title>
+	</head>
+	<body>
+		<h1>Room List</h1>
+
+			<div id="roomList">
+				<a href="game.html">
+				<div class="room">
+					<strong>Room 1</strong> <span>lobbying</span>
+					<p>players : 3 / 4</p>
+				</div>
+			</a>
+
+			<a href="game.html">
+				<div class="room">
+					<strong>Room 2</strong> <span>playing</span>
+					<p>players : 2 / 4</p>
+				</div>
+			</a>
+
+			<a href="game.html">
+				<div class="room">
+					<strong>Room 3</strong> <span>fucking</span>
+					<p>players : 0 / 4</p>
+				</div>
+			</a>
+	</div>
+
+
+	<div id="logs" style="display : none">[LOGS]</div>
+		<p id="toggleLogs">䷾</p>
+
+		<script src="js/roomList.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="http://cdn.socket.io/socket.io-1.0.3.js"></script>
+		<script type="text/javascript" src="js/master.js"></script>
+		<script src="http://port-4242.freefreeciv-server-olivierworkk493832.codeanyapp.com"></script>
+	</body>
+</html>

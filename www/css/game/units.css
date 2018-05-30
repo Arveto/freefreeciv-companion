@@ -1,0 +1,58 @@
+
+
+.stuff{
+  flex: 1;
+  margin-top: -2vw;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 3vw;
+}
+#gold{
+  color: #dac37e;
+}
+#resources{
+  color: #6fb485;
+}
+
+  /** ** PLAYERS UNITS ** **/
+
+.player .units{
+  display: none;
+
+  margin-left: 17vw;
+  margin-right: 5vw;
+}
+
+.unit{
+  margin-top: 1vw;
+}
+
+.units div{
+  display: flex;
+}
+
+.unit img{
+  height: 10vw;
+  width: 10vw;
+  margin-right: 2vw;
+}
+.unit .container{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.unit .container .healthContainer .health{
+  height: 10px;
+  width: 100%;
+  font-size: 3vw;
+  color: grey;
+}
+.unit strong{
+  text-align: left;
+  font-size: 3vw;
+  flex: 0.5;
+  margin-bottom: 2vw;
+}
