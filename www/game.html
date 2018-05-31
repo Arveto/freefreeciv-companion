@@ -38,25 +38,12 @@
 		<div id="logs" style="display : none">[LOGS]</div>
 			<p id="toggleLogs">䷾</p>
 
+			<script type="text/javascript" src="cordova.js"></script>
+			<script type="text/javascript" src="js/master.js"></script>
+		<script src="http://port-4242.freefreeciv-server-olivierworkk493832.codeanyapp.com/socket.io/socket.io.js"></script>
 		<script src="js/game/interface.js"></script>
 		<script src="js/game/main.js"></script>
 		<script src="js/game/messages.js"></script>
 		<script src="js/game/socket_events.js"></script>
-		<script type="text/javascript" src="cordova.js"></script>
-		<script type="text/javascript" src="http://cdn.socket.io/socket.io-1.0.3.js"></script>
-		<script type="text/javascript" src="js/master.js"></script>
-		<script src="http://port-4242.freefreeciv-server-olivierworkk493832.codeanyapp.com"></script>
-		<script>
-		    let socket = io.connect('http://port-4242.aze-olivierworkk493832.codeanyapp.com');
-
-		    socket.on('connected', function (data) {
-						log("socket connection : enabled");
-		        socket.emit('slt', { data: 'slt' });
-		    });
-
-				window.onerror = function(e, url, line){
-				  log('onerror: ' + e + ' URL:' + url + ' Line:' + line);
-				}
-		</script>
 	</body>
 </html>

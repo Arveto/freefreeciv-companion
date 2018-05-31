@@ -1,8 +1,11 @@
-let socket = io.connect('http://port-4242.aze-olivierworkk493832.codeanyapp.com');
+
+  //socket.io stuff
+let socket = io.connect('http://port-4242.freefreeciv-server-olivierworkk493832.codeanyapp.com');
+log("connection to server....")
 
 socket.on('connected', function (data) {
     log("socket connection : enabled");
-    log("waiting for rooms list");
+    log("waiting for rooms list....");
 
     socket.emit('roomList');
 
@@ -21,7 +24,7 @@ class Room {
     $("<div>").addClass('room').html("<strong>"+ name +"</strong> <p>players : "+ players +" / 4</p>").appendTo(this.container);
 
     this.container.on("click", () => {
-      socket.emit('joinRoom', id);
+      window.localStorage.setItem("gameId", id);
     });
   }
 }

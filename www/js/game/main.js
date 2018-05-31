@@ -1,5 +1,4 @@
 
-
 $('div#chat').hide();
 
 
@@ -17,26 +16,23 @@ $('h2#units').on('click', () => {
 });
 
 
+let players = {};
 
 //"test"
 const a = new Player('aazer', 0, 3, 5, 20);
 const b = new Player('brzerzerezr', 1, 4, 3);
 const c = new Player('erfjezorifjz', 2, 6, 2);
 
-a.chHealth('player', 50);
+a.setHealth('player', 50);
 a.newUnit('castle');
 a.newUnit('knight');
+a.setWood(27);
 
-b.chHealth('player', 70);
+b.setHealth('player', 70);
 b.newUnit('paysant');
 b.newUnit('castle');
 
-c.chHealth('player', 20);
+c.setHealth('player', 20);
 c.newUnit('paysant');
 c.newUnit('knight');
 c.newUnit('knight');
-
-
-log("test");
-log("slt");
-log("youpeee");

@@ -29,7 +29,6 @@ document.addEventListener('deviceready', function () {
 });
 
 
-
 // UTILS
 
 window.onerror = function(e, url, line){
@@ -43,8 +42,5 @@ function log(mesg) {
 
 $("#toggleLogs").on("click", () => {
 	$("#logs").toggle();
-});
-
-$('#logs').on('click', () => {
-	$('#logs').hide();
+	console.log("toggle logs");
 });

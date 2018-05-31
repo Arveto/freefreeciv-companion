@@ -10,7 +10,7 @@ class Player {
     this.wood = wood || 0;
     this.health = health || 100;
 
-    this.units = {castle: 0, knight: 0, paysant:0} //XXX
+    this.units = {castle: 0, knight: 0, paysant:0} //TODO : obj {id: unit} && unit class
 
       //display player gui elements
     this.container = $('<div>').attr('id', name).addClass('player').appendTo('div#units');
@@ -25,8 +25,8 @@ class Player {
 
       $('<div>').addClass('bar').html('100%').appendTo(aze);
 
-      //TODO Change 'resources' id to 'wood'
-      $('<div>').addClass('stuff').html('<p id="gold">GOLD ' + this.gold +'</p><p id="resources">WOOD ' + this.wood +'</p>').appendTo(this.healthContainer);
+      //TODO Change 'wood' id to 'wood'
+      $('<div>').addClass('stuff').html('<p id="gold_'+this.name+'" class="gold">GOLD ' + this.gold +'</p><p id="wood_'+this.name+'" class="wood">WOOD ' + this.wood +'</p>').appendTo(this.healthContainer);
 
       $('<div>').addClass('units').appendTo(this.container);
 
@@ -36,17 +36,17 @@ class Player {
     })
   }
 
-  gold(val) {
-    $(this.healthContainer +' .stuff #gold').html('GOLD ' + val);
+  setGold(val) {
+    $("#gold_"+this.name).html('GOLD ' + val);
     this.gold = val;
   }
 
-  resources(val) {
-    $(this.healthContainer + ' .stuff #resources').html('RESOURCES ' + val);
-    this.resources = val;
+  setWood(val) {
+    $("#wood_"+this.name).html('WOOD ' + val);
+    this.wood = val;
   }
 
-  chHealth(target, health) {
+  setHealth(target, health) {
 
     if (target == 'player') {
       $('#'+this.name+' .infos .healthContainer .health .bar').width(health +"%");

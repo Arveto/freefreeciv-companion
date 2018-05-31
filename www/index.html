@@ -6,8 +6,8 @@
 		<meta name="format-detection" content="telephone=no" />
 
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-		<link rel="stylesheet" type="text/css" href="css/master.css" />
 		<link rel="stylesheet" href="css/login.css">
+		<link rel="stylesheet" type="text/css" href="css/master.css" />
 		<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 
@@ -27,31 +27,19 @@
         <input type="password" name="password" id="password" class="password" size="30" placeholder="password"/><button type="button" class="unveilpw" onclick="revealpass('password');"></button>
 
       </br><button class="submit" type="submit">Submit</button>
-      </form> -->
-			<a id="gamehtml" href="game.html">goto: game</a><br/>
-			<a href="rooms.html" id="roomshtml">goto: room</a>
+		</form> --><br/>
+			<a target="_blank" id="scan">You have to scan a QrCode to login <br/><button>SCAN</button></a><br/>
+			<br/>
+			<a id="rooms" href="rooms.html" id="roomshtml">Login success<br/><button>ACCESS TO ROOMS LIST</button></a>
     </div>
 
 		<div id="logs" style="display : none">[LOGS]</div>
 			<p id="toggleLogs">䷾</p>
 
+			<script type="text/javascript" src="cordova.js"></script>
+			<script type="text/javascript" src="js/master.js"></script>
+			<script src="http://port-4242.freefreeciv-server-olivierworkk493832.codeanyapp.com/socket.io/socket.io.js"></script>
     <script src="js/login.js"></script>
-		<script type="text/javascript" src="cordova.js"></script>
-		<script type="text/javascript" src="http://cdn.socket.io/socket.io-1.0.3.js"></script>
-		<script type="text/javascript" src="js/master.js"></script>
-		<script src="http://port-4242.freefreeciv-server-olivierworkk493832.codeanyapp.com"></script>
-		<script>
 
-		    let socket = io.connect('http://port-4242.aze-olivierworkk493832.codeanyapp.com');
-
-		    socket.on('connected', function (data) {
-						log("socket connection : enabled");
-		        socket.emit('slt', { data: 'slt' });
-		    });
-
-				window.onerror = function(e, url, line){
-				  log('onerror: ' + e + ' URL:' + url + ' Line:' + line);
-				}
-		</script>
 	</body>
 </html>
