@@ -35,3 +35,20 @@ span{
   font-size: 0.7em;
   color: #9e958c;
 }
+
+#create{
+  position: absolute;
+  bottom: 5vh;
+  left: calc(50% - 40vw);
+}
+button{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3vw;
+  color: #C2A957;
+  background-color: #1d2125;
+  text-decoration: none;
+  border: none;
+
+  height: 4em;
+  width: 80vw;
+}

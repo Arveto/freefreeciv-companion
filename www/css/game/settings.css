@@ -1,0 +1,57 @@
+
+#settings p, #entrants{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3vw;
+  color: #4a4b4f;
+}
+
+button{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3vw;
+  color: #C2A957;
+  background-color: #25282a;
+  text-decoration: none;
+  border: none;
+
+  height: 4em;
+  width: 50vw;
+}
+
+table {
+    position: absolute;
+    right: 0;
+    left: 0;
+    border-collapse: collapse;
+    font-size: 5vw;
+    background-color: #33363b;
+    color: #535459;
+
+    /* border-radius: 5px; */
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+td{
+  text-align: right;
+  width: 10000%;
+}
+td{
+  text-align: right;
+}
+
+#start{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3vw;
+  color: #C2A957;
+  background-color: #1d2125;
+  text-decoration: none;
+  border: none;
+
+  height: 4em;
+  width: 80vw;
+  position: absolute;
+  bottom: 5vh;
+  left: calc(50% - 40vw);
+}

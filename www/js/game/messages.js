@@ -1,9 +1,9 @@
 
 const Message = {
 
-  display: (message, pseudo) => {
-    if (pseudo) {
-      $("<p>").addClass('message notMine').html("<span class='messenger "+pseudo+"'>>"+pseudo+"</span><br><br>"+message).appendTo('#messagesContainer');
+  display: (message, playerColor) => {
+    if (playerColor) {
+      $("<p>").addClass('message notMine').html("<img class='pp' src='src/player"+playerColor+".png'>"+message).appendTo('#messagesContainer');
     } else {
       $("<p>").addClass('message mine').html(message).appendTo('#messagesContainer');
       $("input#message").val("");
@@ -24,6 +24,7 @@ $("input#message").on('keypress', (e) => {
     let message = $("input#message").val();
     if (message != "") {
       Message.display(message);
+      socket.emit('message', {'content': message, 'sender': window.localStorage.getItem("playerColor"), 'room': window.localStorage.getItem("gameId")})
     }
   }
 });

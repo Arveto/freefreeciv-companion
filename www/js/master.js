@@ -39,6 +39,8 @@ function log(mesg) {
 	$("<p>").html(mesg).appendTo("#logs");
 }
 
+log("[code by TERRUSS]");
+
 
 $("#toggleLogs").on("click", () => {
 	$("#logs").toggle();

@@ -12,24 +12,16 @@ socket.on('connected', function (data) {
     //init
 window.localStorage.clear()
 
-    //Interface
-function revealpass(fieldId) {
-   var field = document.getElementById(fieldId);
-   field.type = (field.type == "password") ? "text" : "password";
-   field.focus();
-   field.setSelectionRange(field.value.length, field.value.length);
-}
-
   //login
 
   $("#scan").on('click', () => {
       cordova.plugins.barcodeScanner.scan(
           function (result) {
               if(!result.cancelled) {
-                if (result.text == "success") { //XXX
-                  log("login success")
+
+                  window.localStorage.setItem("pseudo", result.text);
+
                   $("#rooms").show();
-                }
               }
           }, function (error) {
               log("Scanning failed: " + error);

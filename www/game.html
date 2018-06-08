@@ -9,41 +9,66 @@
 		<link rel="stylesheet" type="text/css" href="css/master.css" />
 		<link rel="stylesheet" href="css/game/units.css">
     <link rel="stylesheet" href="css/game/main.css">
-    <link rel="stylesheet" href="css/game/chat.css">
+		<link rel="stylesheet" href="css/game/chat.css">
+    <link rel="stylesheet" href="css/game/settings.css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 		<meta name="msapplication-tap-highlight" content="no" />
 		<title>FreeFreeCiv Companion</title>
 	</head>
 	<body>
-		<h1>Room 42</h1>
+		<h1 id="roomName">--</h1>
 
     <div id="tabs">
       <h2 id='units'>UNITS</h2>
       <h2 id='chat'>ROOM CHAT</h2>
+			<h2 id='settings'>ROOM SETTINGS</h2>
     </div>
 
     <div id="units"> </div>
 
     <div id="chat">
       <div id="messagesContainer">
-        <p class="message notMine"><span class="messenger pseudo">>Boloss du 78</span><br><br>this is a fucking message from a freacking bastard</p>
+				        <p class="message notMine"><img src="src/playerB.png" class="pp">this is a fucking message from a freacking bastard</p>
         <p class="message mine">Cool story boi</p><p class="message mine">azrezarezrzerezrzerzer</p>
       </div>
       <input type="text" id="message" placeholder="Your message here" autofocus autocomplete="off" >
     </div>
 
-    <div id="settings"></div>
+    <div id="settings">
+			<p>Only you can read this</p>
+
+			<div id="entrants">
+				<h3>PLAYERS</h2>
+			<table>
+			  <tr class='ga'>
+			    <td>--</td>
+			   	 <td><button>Add Bot</button></td>
+			  </tr>
+				<tr class='bu'>
+			    <td>--</td>
+			    <td><button>Add Bot</button></td>
+			  </tr>
+				<tr class='zo'>
+			    <td>--</td>
+			    <td><button>Add Bot</button></td>
+			  </tr>
+			</table>
+
+			<button id="start">Start the Game !</button>
+
+		</div>
 
 		<div id="logs" style="display : none">[LOGS]</div>
 			<p id="toggleLogs">䷾</p>
 
-			<script type="text/javascript" src="cordova.js"></script>
+			<!-- <script type="text/javascript" src="cordova.js"></script> -->
 			<script type="text/javascript" src="js/master.js"></script>
 		<script src="http://port-4242.freefreeciv-server-olivierworkk493832.codeanyapp.com/socket.io/socket.io.js"></script>
-		<script src="js/game/interface.js"></script>
-		<script src="js/game/main.js"></script>
-		<script src="js/game/messages.js"></script>
 		<script src="js/game/socket_events.js"></script>
+		<script src="js/game/player.js"></script>
+		<script src="js/game/main.js"></script>
+		<script src="js/game/settings.js"></script>
+		<script src="js/game/messages.js"></script>
 	</body>
 </html>

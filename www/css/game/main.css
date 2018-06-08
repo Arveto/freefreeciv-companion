@@ -29,6 +29,9 @@ h1{
 #tabs #units{
     border-bottom: 5px solid #7f756b;
 }
+#tabs #settings{
+  display: none;
+}
 
 
 
