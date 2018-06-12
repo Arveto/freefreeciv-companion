@@ -21,16 +21,26 @@ socket.on('connected', function (data) {
 
 
   socket.on("newPlayer", (data) => {
+
     if (data.room == window.localStorage.getItem("roomId")){
-      players[players.length] = new Player (data.player.pseudo, data.player.isAiControlled);
+      players[data.pseudo] = new Player (data.pseudo, data.isAiControlled);
     }
   });
+
+  socket.on("playerLeave", (data)=>{
+    alert('playerLeave');
+
+    if (data.room == window.localStorage.getItem("roomId")){
+      players[data.player.pseudo].remove;
+      delete players[data.player.pseudo];
+    }
+  })
 
 
       //ADMIN STUFF
 
     socket.on("youAreAdmin", (room)=>{
-      console.log("admin" + room.roomId);
+      console.log("admin " + room.roomId);
       window.localStorage.setItem('roomId', room.roomId)
       $("#tabs #settings").show();
     })
@@ -47,6 +57,10 @@ socket.on('connected', function (data) {
 
 
       //GAME EVENTS
+
+    socket.on('damage', (data)=>{
+
+    })
 
     socket.on("setGold", (data) => {
       if (data.room == window.localStorage.getItem("roomId"))

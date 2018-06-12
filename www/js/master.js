@@ -46,3 +46,9 @@ $("#toggleLogs").on("click", () => {
 	$("#logs").toggle();
 	console.log("toggle logs");
 });
+
+document.addEventListener("offline", function(e){
+										alert("NO_NETWORK");
+										log("socket connection : [disabled]");
+										log("No connection : the server must be down...");
+}, false);

@@ -2,7 +2,7 @@
 const playerColor = ['R', 'B', 'G', 'Y'];
 // const unitsProperties = {castle: {life: 10, ...}} //XXX
 
-let players = [];
+let players = {};
 
 class Player {
   constructor(name, isAiControlled){
@@ -17,11 +17,11 @@ class Player {
       //display player gui elements
     this.container = $('<div>').attr('id', name).addClass('player').appendTo('div#units');
       let infos = $('<div>').addClass('infos').appendTo(this.container);
-      $('<img>').attr('src', 'src/player'+playerColor[this.slot]+'.png').appendTo(infos);
+      $('<img>').attr('src', 'src/player'+playerColor[Object.keys(players).length]+'.png').appendTo(infos);
 
       let div = $('<div>').addClass('container').appendTo(infos);
 
-      isAiControlled ? $('<strong>').html(this.name+" [BOT]").appendTo(div) : $('<strong>').html(this.name).appendTo(div);
+      isAiControlled ? $('<strong>').html(this.name +" [BOT]").appendTo(div) : $('<strong>').html(this.name + '').appendTo(div);
 
       this.healthContainer = $('<div>').addClass('healthContainer').appendTo(div);
       let aze = $('<div>').addClass('health').appendTo(this.healthContainer);
@@ -61,6 +61,10 @@ class Player {
       default:
         log("Slot of the player "+ name+ " !C [1,3]");
     }
+  }
+
+  remove(){
+    this.container.remove();
   }
 
   setGold(val) {
@@ -103,5 +107,4 @@ class Player {
     let health = $('<div>').addClass('health').appendTo(healthContainer);
     $('<div>').addClass('bar').html('100%').appendTo(health);
   }
-
 }

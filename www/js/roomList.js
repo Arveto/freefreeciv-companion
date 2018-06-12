@@ -21,19 +21,26 @@ socket.on('connected', function () {
 
 window.localStorage.setItem("createRoom", false);
 
+let roomsId = [];
+
 class Room {
   constructor(name, id, players){
-    this.id = id;
-    this.players = players
+    if (roomsId.indexOf(id) == -1){ //prevent room duplication
+      roomsId[roomsId.length] = id
 
-    this.container = $("<a>").attr("href", "game.html").appendTo("#roomList");
-    let el = $("<div>").addClass('room').html("<strong>"+ name +"</strong> <p class='"+id+"nplayers'>players : "+ players +" / 4</p>").appendTo(this.container);
+      this.id = id;
+      this.players = players;
 
-    this.container.on("click", () => {
-      console.log('id : '+ id);
-      window.localStorage.setItem("roomId", id);
-      window.localStorage.setItem("roomName", name);
-    });
+
+      this.container = $("<a>").attr("href", "game.html").appendTo("#roomList");
+      let el = $("<div>").addClass('room').html("<strong>"+ name +"</strong> <p class='"+id+"nplayers'>players : "+ players +" / 4</p>").appendTo(this.container);
+
+      this.container.on("click", () => {
+        console.log('id : '+ id);
+        window.localStorage.setItem("roomId", id);
+        window.localStorage.setItem("roomName", name);
+      });
+    }
   }
 }
 

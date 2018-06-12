@@ -24,7 +24,7 @@ $("input#message").on('keypress', (e) => {
     let message = $("input#message").val();
     if (message != "") {
       Message.display(message);
-      socket.emit('message', {'content': message, 'sender': window.localStorage.getItem("playerColor"), 'room': window.localStorage.getItem("gameId")})
+      socket.emit('message', {'content': message, 'sender': window.localStorage.getItem("pseudo"), 'room': window.localStorage.getItem("roomId")})
     }
   }
 });
