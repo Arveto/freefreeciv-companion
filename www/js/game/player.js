@@ -2,20 +2,20 @@
 const playerColor = ['R', 'B', 'G', 'Y'];
 // const unitsProperties = {castle: {life: 10, ...}} //XXX
 
-let players = {};
+let players = [];
 
 class Player {
-  constructor(name, isAiControlled){
+  constructor(name, slot, isAiControlled){
     this.name = name;
     this.isAiControlled = isAiControlled ? true : false;
-    this.slot = players.length;
+    this.slot = slot
     this.gold = 0;
     this.wood = 0;
     this.health = 100;
 
     this.units = {castle: 0, knight: 0, paysant:0} //TODO : obj {slot: unit} && unit class
       //display player gui elements
-    this.container = $('<div>').attr('id', name).addClass('player').appendTo('div#units');
+    this.container = $('<div>').attr('id', name).addClass('player slot'+this.slot).appendTo('div#units');
       let infos = $('<div>').addClass('infos').appendTo(this.container);
       $('<img>').attr('src', 'src/player'+playerColor[Object.keys(players).length]+'.png').appendTo(infos);
 
@@ -61,10 +61,6 @@ class Player {
       default:
         log("Slot of the player "+ name+ " !C [1,3]");
     }
-  }
-
-  remove(){
-    this.container.remove();
   }
 
   setGold(val) {

@@ -23,18 +23,25 @@ socket.on('connected', function (data) {
   socket.on("newPlayer", (data) => {
 
     if (data.room == window.localStorage.getItem("roomId")){
-      players[data.pseudo] = new Player (data.pseudo, data.isAiControlled);
+      players[data.slot] = new Player (data.pseudo, data.isAiControlled, data.slot);
     }
   });
 
   socket.on("playerLeave", (data)=>{
-    alert('playerLeave');
+
+    alert(data.pseudo)
 
     if (data.room == window.localStorage.getItem("roomId")){
-      players[data.player.pseudo].remove;
-      delete players[data.player.pseudo];
+      $('.player.slot'+data.slot).remove();
+      $('.player.slot'+data.slot).detach();
+      $('.player.slot'+data.slot).empty();
+      $('#'+data.pseudo).remove();
+      $('#'+data.pseudo).detach();
+      $('#'+data.pseudo).empty();
+      delete players[data.slot];
     }
-  })
+
+  });
 
 
       //ADMIN STUFF

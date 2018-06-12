@@ -32,7 +32,7 @@ document.addEventListener('deviceready', function () {
 // UTILS
 
 window.onerror = function(e, url, line){
-	log('onerror: ' + e + ' URL: ' + url + ' Line:' + line);
+	log(e + ' URL: ' + url + ' Line:' + line);
 }
 
 function log(mesg) {
